@@ -79,14 +79,9 @@
         [array addObject:path];
     }
     
-    // Fix Scrolling!
     [self.collectionView insertItemsAtIndexPaths:array];
+    [self.collectionView scrollToItemAtIndexPath:[array lastObject] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
     
-    NSLog(@"%f, %f", self.collectionView.contentSize.height, self.collectionView.bounds.size.height);
-    
-    if (self.collectionView.contentSize.height > self.collectionView.bounds.size.height) {
-        [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x, self.collectionView.contentSize.height - self.collectionView.bounds.size.height) animated:YES];
-    }
 }
 
 - (void)addMoreCards

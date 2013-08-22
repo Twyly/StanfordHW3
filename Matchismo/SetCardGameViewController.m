@@ -172,7 +172,7 @@
 
 - (IBAction)showSetButtonPressed:(UIButton *)sender
 {
-    
+    NSLog(@"Not yet implemented");
 }
 
 - (Deck *)createDeck
